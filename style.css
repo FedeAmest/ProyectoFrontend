@@ -217,7 +217,7 @@ body{
 }
 .modalFrente{
     border-radius: 25px;
-    position: sticky;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -264,4 +264,5 @@ body{
         width: 430px;
         height: 250px;
         overflow: auto;
+
 }
