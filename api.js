@@ -229,22 +229,3 @@ function listarEpisodios(lista) {
         })
 }
 
-// <img src="${dataUnico.image}" alt="" class='imgModal'>
-//                         <div class="contenedorPersonajeModal">
-//                             <h3>NAME</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.name}</p>
-//                             <h3>GENDER</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.gender}</p>
-//                             <h3>STATUS</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.status}</p>
-//                             <h3>TYPE</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.type}</p>
-//                             <h3>SPECIE</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.species}</p>
-//                             <h3>ORIGEN</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.origin.name}</p>
-//                             <h3>LOCATION</h3>
-//                             <p class="infoPersonajeModal">${dataUnico.location.name}</p>
-//                             <h3>EPISODES</h3>
-//                             <p class="infoPersonajeModal">${episodios}</p>
-//                         </div>

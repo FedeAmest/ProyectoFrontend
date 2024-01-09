@@ -37,8 +37,13 @@ body{
 }
 
 .textoFiltro{
+    margin: 0;
+    display: flex;
     font-weight: 900;
     font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: #87878799;
 }
 
 .btnFiltro{
@@ -265,4 +270,77 @@ body{
         height: 250px;
         overflow: auto;
 
+}
+
+
+@media (max-width: 600px) {
+    .menuFiltros {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    }
+    .btnFiltro {
+        width: auto;
+        margin: 5px;
+    }
+
+    .contenedorGral {
+        justify-content: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .modalFrente {
+        width: 86%;
+        left: 48%;
+    }
+
+    .imgModal{
+        border: 1px solid black;
+    border-radius: 25px 0px 0px 0px;
+    width: 180px;
+    }
+
+    .modalSuperior{
+    gap: 25px;
+    border-radius: 25px 0px 0px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #9BC92A;
+    }
+    .modalInferior{
+        gap: 22px;
+        display: flex;
+        flex-direction: column;
+        background-color: #9BC92A;
+    }
+    .tituloDato{
+        padding-top: 5px;
+        padding-left: 10px;
+        font-size: 24px;
+        margin: 0;
+        font-weight: 900;
+    }
+    .infoPersonajeModal {
+        padding-left: 10px;
+        font-weight: 500;
+        margin: 5px 0px 5px 0px;
+        font-size: 20px;
+    }
+    
+    .episodios{
+        width: 300px;
+        height: 178px;
+        overflow: auto;
+    
+    }
+    .contador{
+        top:  50px;
+    }
 }
