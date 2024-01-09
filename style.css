@@ -282,7 +282,6 @@ body{
     justify-content: space-evenly;
     }
     .btnFiltro {
-        width: auto;
         margin: 5px;
     }
 
@@ -304,7 +303,7 @@ body{
     .imgModal{
         border: 1px solid black;
     border-radius: 25px 0px 0px 0px;
-    width: 180px;
+    width: 160px;
     }
 
     .modalSuperior{
@@ -335,9 +334,9 @@ body{
     }
     
     .episodios{
-        width: 300px;
-        height: 178px;
-        overflow: auto;
+        width: 260px;
+    height: 178px;
+    overflow: auto;
     
     }
     .contador{
