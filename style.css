@@ -242,6 +242,7 @@ body{
     background-color: #9BC92A;
 }
 .modalInferior{
+    border-radius: 0px 25px 25px 0px;
     display: flex;
     flex-direction: column;
     background-color: #9BC92A;
@@ -273,7 +274,7 @@ body{
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 450px) {
     .menuFiltros {
     flex-direction: row;
     align-items: center;
@@ -298,7 +299,7 @@ body{
 
     .modalFrente {
         width: 75%;
-        left: 43%;
+        left: 45%;
     }
 
     .imgModal{
@@ -335,7 +336,7 @@ body{
     }
     
     .episodios{
-        width: 250px;
+        width: 222px;
         height: 178px;
         overflow: auto;
     
