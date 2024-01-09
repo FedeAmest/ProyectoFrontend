@@ -280,9 +280,10 @@ body{
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 10px;
     }
     .btnFiltro {
-        margin: 5px;
+        width: 100px;
     }
 
     .contenedorGral {
