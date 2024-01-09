@@ -297,8 +297,8 @@ body{
     }
 
     .modalFrente {
-        width: 86%;
-        left: 45%;
+        width: 75%;
+        left: 43%;
     }
 
     .imgModal{
@@ -336,8 +336,8 @@ body{
     
     .episodios{
         width: 250px;
-    height: 178px;
-    overflow: auto;
+        height: 178px;
+        overflow: auto;
     
     }
     .contador{
