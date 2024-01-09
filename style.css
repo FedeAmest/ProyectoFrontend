@@ -1,0 +1,267 @@
+/* ------------------- ESTILO BODY--------------------- */
+
+body{
+    font-family: 'League Spartan',sans-serif;
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* ------------------- ESTILO HEADER--------------------- */
+.header{
+    height: 150px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    display: flex;
+}
+.header img{
+    width: 300px;
+}
+.logo{
+    width: 300px;
+}
+/* ------------------- ESTILO FILTROS--------------------- */
+.menuFiltros {
+    background-color: #87878799;
+    /* position: sticky; */
+    /* top: 0px; */
+    gap: 30px;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.textoFiltro{
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.btnFiltro{
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    background-color: #9BC92A;
+    box-shadow: 1px 4px 5px 0 #00B5CC;
+    border-radius: 25px;
+    background-size: cover;
+    width: 100px;
+    height: 50px;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.btnFiltro:hover{
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    background-color: #9BC92A;
+    box-shadow: 1px 4px 5px 0 #00B5CC;
+    border-radius: 25px;
+    background-size: cover;
+    width: 100px;
+    height: 50px;
+    box-shadow: 4px 5px 0 0 black;
+    cursor: pointer;
+}
+/* ------------------- ESTILO CONTADOR PERSONAJES--------------------- */
+.contador{
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87878799;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+/* ------------------- ESTILO CONTENEDOR TARJETA--------------------- */
+.contenedorGral{
+    display: flex;
+    background-color: #B7B7B7;
+    margin-top: 0px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 15px;
+}
+/* ------------------- ESTILO TARJETAS--------------------- */
+.card{
+    background-color: #ffffff9e;
+    margin-top: 25px;
+    position: relative;
+    border: 1px solid lightgray;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 750px;
+    transition: transform 0.3s ease, border 1s ease;
+    cursor: pointer;
+    
+}
+
+.card:hover{
+    transform: scale(1.05);
+    border: 3px solid black ;
+    cursor: pointer;
+}
+
+.imgPersonaje{
+    width: 300px;
+    border-radius: 33px 33px 0px 0px;
+}
+
+.info{
+    display: flex;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.nombre{
+    padding-left: 13px;
+    font-size: 26px;
+    word-wrap: break-word;
+}
+
+.botonMas{
+    bottom: -1.5pc;
+    position: absolute;
+    border: none;
+    background-color: #9BC92A;
+    box-shadow: 1px 4px 5px 0 #00B5CC;
+    font-size: 24px;
+    border-radius: 25px;
+    height: 50px;
+    width: 150px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.botonMas:hover{
+    box-shadow: 4px 6px 1px 0px black;
+    transition: box-shadow 0.5s cubic-bezier(0.55, 0.09, 0, 0.18);
+    cursor: pointer;
+}
+/* ------------------- ESTILO PAGINADO--------------------- */
+.menuPaginado{
+    padding: 50px;
+    background-color: #87878799;
+    gap: 15px;
+    /* position: sticky; */
+    /* bottom: 44px; */
+    display: flex;
+    justify-content: center;
+}
+
+
+.btnPaginado{
+
+    font-family: math;
+    font-weight: 900;
+    background-color: #9BC92A;
+    box-shadow: 1px 4px 5px 0 #00B5CC;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnPaginado:disabled, .btnPaginado:disabled:hover{
+    background-color: rgba(112, 128, 144, 0.658);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.btnPaginado:hover{
+    box-shadow: 4px 6px 1px 0px black;
+    transition: box-shadow 0.1s ease;
+    cursor: pointer;
+}
+/* ------------------- ESTILO FOOTER--------------------- */
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 500px;
+    color: white;
+    height: 100px;
+    background-color: black;
+}
+.footer a{
+    text-decoration: none;
+    color:#00B5CC;
+}
+.footer a:visited{
+    text-decoration: none;
+    color: #00B5CC;
+}
+
+/* ------------------- ESTILO MODAL--------------------- */
+
+.modalFdo{
+
+    top: 0;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(43,43,43,0.5);
+
+}
+.modalFrente{
+    border-radius: 25px;
+    position: sticky;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background-color: #9bc92a;
+    width: 800px;
+    height: 500px;
+    z-index: 1;
+    box-shadow: 0 0 18px 7px;
+
+}
+
+.modalSuperior{
+    border-radius: 25px 0px 0px 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #9BC92A;
+}
+.modalInferior{
+    display: flex;
+    flex-direction: column;
+    background-color: #9BC92A;
+}
+.imgModal{
+    border: 1px solid black;
+    border-radius: 25px 0px 0px 0px;
+    width: 300px;
+}
+
+.tituloDato{
+    padding-top: 5px;
+    padding-left: 20px;
+    font-size: 24px;
+    margin: 0;
+    font-weight: 900;
+}
+.infoPersonajeModal {
+    padding-left: 50px;
+    font-weight: 500;
+    margin: 5px 0px 5px 0px;
+    font-size: 25px;}
+
+.episodios{
+        width: 430px;
+        height: 250px;
+        overflow: auto;
+}
