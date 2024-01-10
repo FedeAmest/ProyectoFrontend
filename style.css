@@ -274,7 +274,7 @@ body{
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 390px) {
     .menuFiltros {
     flex-direction: row;
     align-items: center;
@@ -324,7 +324,7 @@ body{
     .tituloDato{
         padding-top: 5px;
         padding-left: 10px;
-        font-size: 24px;
+        font-size: 20px;
         margin: 0;
         font-weight: 900;
     }
@@ -332,11 +332,11 @@ body{
         padding-left: 10px;
         font-weight: 500;
         margin: 5px 0px 5px 0px;
-        font-size: 20px;
+        font-size: 15px;
     }
     
     .episodios{
-        width: 222px;
+        width: 185px;
         height: 178px;
         overflow: auto;
     
