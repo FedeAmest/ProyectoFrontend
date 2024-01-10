@@ -274,7 +274,7 @@ body{
 }
 
 
-@media (max-width: 390px) {
+@media (max-width: 390px){
     .menuFiltros {
     flex-direction: row;
     align-items: center;
@@ -316,29 +316,29 @@ body{
     background-color: #9BC92A;
     }
     .modalInferior{
-        gap: 22px;
+        gap: 27px;
         display: flex;
         flex-direction: column;
         background-color: #9BC92A;
     }
     .tituloDato{
         padding-top: 5px;
-        padding-left: 10px;
-        font-size: 20px;
-        margin: 0;
-        font-weight: 900;
+    padding-left: 5px;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 900;
     }
     .infoPersonajeModal {
-        padding-left: 10px;
-        font-weight: 500;
-        margin: 5px 0px 5px 0px;
-        font-size: 15px;
+        padding-left: 5px;
+    font-weight: 500;
+    margin: 5px 0px 5px 0px;
+    font-size: 15px;
     }
     
     .episodios{
-        width: 185px;
-        height: 178px;
-        overflow: auto;
+        width: 170px;
+    height: 178px;
+    overflow: auto;
     
     }
     .contador{
