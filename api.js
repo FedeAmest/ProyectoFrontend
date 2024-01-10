@@ -185,10 +185,10 @@ function mostrarModal() {
                                                     <p class="infoPersonajeModal">${dataUnico.gender}</p></div>
                                                     <div class="contenedorDato"><h3 class="tituloDato">STATUS</h3>
                                                     <p class="infoPersonajeModal">${dataUnico.status}</p></div>
-                                                    </div>
-                                                    <div class="modalInferior">
                                                     <div class="contenedorDato"><h3 class="tituloDato">TYPE</h3>
                                                     <p class="infoPersonajeModal">${dataUnico.type}</p></div>
+                                                    </div>
+                                                    <div class="modalInferior">
                                                     <div class="contenedorDato"><h3 class="tituloDato">SPECIE</h3>
                                                     <p class="infoPersonajeModal">${dataUnico.species}</p></div>
                                                     <div class="contenedorDato"><h3 class="tituloDato">ORIGEN</h3>
