@@ -349,8 +349,8 @@ body{
 @media (min-width : 831px){
     .imgModal{
         border: 1px solid black;
-    border-radius: 25px 0px 0px 0px;
-    width: 220px;
+        border-radius: 25px 0px 0px 0px;
+        width: 200px;
     }
     .modalInferior{
         gap: 10px;
