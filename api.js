@@ -1,10 +1,9 @@
 //--------------------------LLAMADO A ELEMENTOS HTML-------------------------------//
 
-//-------------------------------
+//-------------------------------CONTENEDORES
 let modalTarjeta = document.getElementById('modalInfo')
 let contenedorTarjeta = document.getElementById('contenedorTarjetas')
 let modalVisible = document.getElementById('modalFondo')
-let botonModal = document.getElementById('prueba')
 let contador = document.getElementById('totalPagina')
 
 //--------------------------------------BOTONES---------------------------------//

@@ -26,8 +26,6 @@ body{
 /* ------------------- ESTILO FILTROS--------------------- */
 .menuFiltros {
     background-color: #87878799;
-    /* position: sticky; */
-    /* top: 0px; */
     gap: 30px;
     justify-content: center;
     padding: 10px;
