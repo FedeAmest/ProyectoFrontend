@@ -1,29 +1,36 @@
+//--------------------------LLAMADO A ELEMENTOS HTML-------------------------------//
+
+//-------------------------------
 let modalTarjeta = document.getElementById('modalInfo')
 let contenedorTarjeta = document.getElementById('contenedorTarjetas')
-let btnVerMas = document.getElementById('btnModal')
 let modalVisible = document.getElementById('modalFondo')
 let botonModal = document.getElementById('prueba')
 let contador = document.getElementById('totalPagina')
 
+//--------------------------------------BOTONES---------------------------------//
+//---FILTROS
 let btnFiltroAll=document.getElementById('btnFiltroTodos')
 let btnFiltroMen=document.getElementById('btnFiltroHombre')
 let btnFiltroWomen=document.getElementById('btnFiltroMujer')
 let btnFiltroUnk=document.getElementById('btnFiltroUnknown')
 let btnFiltroGender=document.getElementById('btnFiltroGenderless')
-
+//---PAGINADO
 let btnPaginadoPrimer = document.getElementById('btnPrimerPagina')
 let btnPaginadoAnterior = document.getElementById('btnAnteriorPagina')
 let btnPaginadoSiguiente = document.getElementById('btnSiguientePagina')
 let btnPaginadoUltima = document.getElementById('btnUltimaPagina')
+//---BOTON MODAL
+let btnVerMas = document.getElementById('btnModal')
 
 
 
+let idpersonaje;
 let paginaActual = 1
 let totalPersonajes;
 solicitudFetch(paginaActual)
-
-
 let totalPagina;
+
+
 
 
 //----------------------------------Funciones-------------------------- 
@@ -39,9 +46,42 @@ function solicitudFetch(paginaActual){
     })
 }
 
+function mostrarModal() {
+    modalVisible.style.display = 'block';
+    fetch('https://rickandmortyapi.com/api/character/' + idpersonaje)
+        .then((dataUnico) => {
+            return dataUnico.json();
+        })
+        .then((dataUnico) => {
+            listarEpisodios(dataUnico.episode)
+                .then((episodios) => {
+                    modalTarjeta.innerHTML = `
+                                                <div class="modalSuperior">
+                                                <img src="${dataUnico.image}" alt="" class='imgModal'>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">NAME</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.name}</p></div>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">GENDER</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.gender}</p></div>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">STATUS</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.status}</p></div>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">TYPE</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.type}</p></div>
+                                                    </div>
+                                                    <div class="modalInferior">
+                                                    <div class="contenedorDato"><h3 class="tituloDato">SPECIE</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.species}</p></div>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">ORIGEN</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.origin.name}</p></div>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">LOCATION</h3>
+                                                    <p class="infoPersonajeModal">${dataUnico.location.name}</p></div>
+                                                    <div class="contenedorDato"><h3 class="tituloDato">EPISODES</h3>
+                                                    <p class="infoPersonajeModal episodios" >${episodios}</p></div>
+                                                    </div>
+                    `;
+                });
+        });
+}
 
-
-let idpersonaje;
 function mostrarPersonajes(lista){
     contenedorTarjeta.innerHTML=''
     lista.forEach((personajeObj) =>{
@@ -64,11 +104,44 @@ function mostrarPersonajes(lista){
             mostrarModal()
         });
     });
-    // -------------------------FUNCIONES COMPLEMENTARIAS---------------------------------------------
     totalPagina = lista.length //CAPTURA TOTAL DE ELEMENTOS EN PANTALLA
     mostrarTotal() 
     habilitarBotones() 
 }
+
+// -------------------------FUNCIONES COMPLEMENTARIAS---------------------------------------------//
+
+//-----LISTADO DE EPISODIOS (PARA MODAL)
+function listarEpisodios(lista) {
+    const promesasEpisodios = lista.map((episodioURL) => { 
+        return fetch(episodioURL).then((response) => response.json());
+    }); //realiza un fetch de todas las url
+
+    return Promise.all(promesasEpisodios) //devuelve los datos cuando todas las promesas estan cumplidas
+        .then((episodios) => {
+            return episodios.map((datoEpisodio) => {
+                return `Nombre: ${datoEpisodio.name},Fecha de lanzamiento: ${datoEpisodio.air_date},Nro: ${datoEpisodio.episode}<br>`;
+            }).join('<br>');
+        })
+}
+
+
+
+
+//---------TOTAL DE PERSONAJES EN PANTALLA
+function mostrarTotal(){
+    if(totalPagina>1 || totalPagina<1){
+    contador.innerText=`Mostrando ${totalPagina} personajes`
+}else{
+    contador.innerText=`Mostrando ${totalPagina} personaje`
+    }
+}
+//---CERRAR MODAL
+function cerrarModal(){
+    modalVisible.style.display='none'
+}
+
+
 //------------------------------Filtros
 function filtroMujeres(){
     let mujeres= totalPersonajes.filter((personaje)=>{
@@ -158,74 +231,3 @@ btnPaginadoAnterior.addEventListener('click',anteriorPagina)
 btnPaginadoSiguiente.addEventListener('click',siguientePagina)
 btnPaginadoUltima.addEventListener('click',ultimaPagina)
 modalVisible.addEventListener('click',cerrarModal)
-
-
-function cerrarModal(){
-    modalVisible.style.display='none'
-}
-
-
-
-
-function mostrarModal() {
-    modalVisible.style.display = 'block';
-    fetch('https://rickandmortyapi.com/api/character/' + idpersonaje)
-        .then((dataUnico) => {
-            return dataUnico.json();
-        })
-        .then((dataUnico) => {
-            listarEpisodios(dataUnico.episode)
-                .then((episodios) => {
-                    modalTarjeta.innerHTML = `
-                                                <div class="modalSuperior">
-                                                <img src="${dataUnico.image}" alt="" class='imgModal'>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">NAME</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.name}</p></div>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">GENDER</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.gender}</p></div>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">STATUS</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.status}</p></div>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">TYPE</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.type}</p></div>
-                                                    </div>
-                                                    <div class="modalInferior">
-                                                    <div class="contenedorDato"><h3 class="tituloDato">SPECIE</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.species}</p></div>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">ORIGEN</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.origin.name}</p></div>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">LOCATION</h3>
-                                                    <p class="infoPersonajeModal">${dataUnico.location.name}</p></div>
-                                                    <div class="contenedorDato"><h3 class="tituloDato">EPISODES</h3>
-                                                    <p class="infoPersonajeModal episodios" >${episodios}</p></div>
-                                                    </div>
-                    `;
-                });
-        });
-}
-
-
-
-function mostrarTotal(){
-    if(totalPagina>1 || totalPagina<1){
-    contador.innerText=`Mostrando ${totalPagina} personajes`
-}else{
-    contador.innerText=`Mostrando ${totalPagina} personaje`
-    }
-}
-
-
-
-
-function listarEpisodios(lista) {
-    const promesasEpisodios = lista.map((episodioURL) => { 
-        return fetch(episodioURL).then((response) => response.json());
-    }); //realiza un fetch de todas las url
-
-    return Promise.all(promesasEpisodios) //devuelve los datos cuando todas las promesas estan cumplidas
-        .then((episodios) => {
-            return episodios.map((datoEpisodio) => {
-                return `Nombre: ${datoEpisodio.name},Fecha de lanzamiento: ${datoEpisodio.air_date},Nro: ${datoEpisodio.episode}<br>`;
-            }).join('<br>');
-        })
-}
-
